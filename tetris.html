@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+   <title>Tetris</title>
+   <link rel="stylesheet" href="tetris.css">
+   <script src="tetris.js"></script>
+</head>
+<body>
+    <div>
+        <h1 id="header">TETRIS</h1>
+    </div>
+    <canvas id="canvas" width="300" height="600"></canvas>
+    <label id="next_tetromino">&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp NEXT TETROMINO:</label>
+    <canvas id="next" width="120" height="60"></canvas>
+    <div>
+        <label id="score"></label>
+        <label id="level"></label>
+    </div>
+
+    <script>
+        // ===== main ====
+        // canvas related variables
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+
+        // clear the canvas
+        ctx.fillStyle = 'white';
+        ctx.fillRect(0,0,canvas.width,canvas.height);
+
+        // 'next' canvas related variables
+        var next_canvas = document.getElementById("next");
+        var next_ctx = next_canvas.getContext("2d");
+
+        // clear the canvas
+        next_ctx.fillStyle = 'white';
+        next_ctx.fillRect(0,0,next_canvas.width,next_canvas.height);
+
+        var game = new Tetris();
+        game.init();
+    </script>
+</body>
+</html>
